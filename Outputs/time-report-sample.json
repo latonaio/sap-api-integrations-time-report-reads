@@ -1,0 +1,30 @@
+{
+	"cursor": "/Users/latona5/bitbucket/sap-api-integrations-time-report-reads/SAP_API_Caller/caller.go#L53",
+	"function": "sap-api-integrations-time-report-reads/SAP_API_Caller.(*SAPAPICaller).TimeReportCollection",
+	"level": "INFO",
+	"message": [
+		{
+			"ObjectID": "00163E0C6CDB1EE79C91FAF19C5B4BE1",
+			"Description": "",
+			"languageCode": "",
+			"EmployeeUUID": "00163E05-AE66-1ED3-88BF-33E82FE7E463",
+			"EndDate": "2017-07-24T09:00:00+09:00",
+			"ID": "1",
+			"InformationLifeCycleStatusCode": "",
+			"RejectionReason": "",
+			"languageCode1": "",
+			"ReportName": "24 July 2017",
+			"languageCode2": "",
+			"StartDate": "2017-07-24T09:00:00+09:00",
+			"Status": "3",
+			"CreationDateTime": "2017-07-25T01:48:18+09:00",
+			"CreationIdentityUUID": "00163E05-AE66-1ED3-88BF-3F0E7DE5A467",
+			"LastChangeDateTime": "2017-07-25T13:29:37+09:00",
+			"LastChangeIdentityUUID": "00163E03-A070-1EE2-88BA-3917457F10B3",
+			"TotalDuration": "PT2H15M",
+			"EntityLastChangedOn": "2017-07-25T13:29:37+09:00",
+			"ETag": "2017-07-25T13:29:37+09:00"
+		}
+	],
+	"time": "2022-08-05T16:01:20+09:00"
+}
