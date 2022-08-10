@@ -32,3 +32,16 @@ type TimeReportCollection struct {
 	EntityLastChangedOn            string `json:"EntityLastChangedOn"`
 	ETag                           string `json:"ETag"`
 }
+
+type TimeReportPartyCollection struct {
+	ObjectID                string `json:"ObjectID"`
+	ParentObjectID          string `json:"ParentObjectID"`
+	DeterminationMethodCode string `json:"DeterminationMethodCode"`
+	AddressHostTypeCode     string `json:"AddressHostTypeCode"`
+	MainIndicator           bool   `json:"MainIndicator"`
+	PartyID                 string `json:"PartyID"`
+	PartyTypeCode           string `json:"PartyTypeCode"`
+	RoleCategoryCode        string `json:"RoleCategoryCode"`
+	RoleCode                string `json:"RoleCode"`
+	ETag                    string `json:"ETag"`
+}

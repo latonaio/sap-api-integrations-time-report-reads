@@ -25,6 +25,7 @@ sap-api-integrations-time-report-reads が対応する APIサービス は、次
 sap-api-integrations-time-report-reads には、次の API をコールするためのリソースが含まれています。  
 
 * TimeReportCollection（タイムレポート - タイムレポート）  
+* TimeReportPartyCollection（タイムレポート - 関係者）  
 
 ## API への 値入力条件 の 初期値
 sap-api-integrations-time-report-reads において、API への値入力条件の初期値は、入力ファイルレイアウトの種別毎に、次の通りとなっています。  
@@ -32,7 +33,8 @@ sap-api-integrations-time-report-reads において、API への値入力条件�
 ### SDC レイアウト
 
 * inoutSDC.TimeReportCollection.ID（ID）  
-
+* inoutSDC.TimeReportCollection.TimeReportCollection.ObjectID（対象ID）  
+* inoutSDC.TimeReportCollection.TimeReportCollection.PartyID（関係者ID）  
 
 ## SAP API Bussiness Hub の API の選択的コール
 
@@ -47,7 +49,7 @@ accepter において 下記の例のように、データの種別（＝APIの�
 ```
 	"api_schema": "TimeReport",
 	"accepter": ["TimeReportCollection"],
-	"time_report_code": "",
+	"time_report_code": "1",
 	"deleted": false
 ```
   
@@ -58,7 +60,7 @@ accepter において 下記の例のように、データの種別（＝APIの�
 ```
 	"api_schema": "TimeReport",
 	"accepter": ["All"],
-	"time_report_code": "",
+	"time_report_code": "1",
 	"deleted": false
 ```
 
@@ -68,7 +70,7 @@ accepter における データ種別 の指定に基づいて SAP_API_Caller �
 caller.go の func() 毎 の 以下の箇所が、指定された API をコールするソースコードです。  
 
 ```
-func (c *SAPAPICaller) AsyncGetTimeReport(iD string, accepter []string) {
+func (c *SAPAPICaller) AsyncGetTimeReport(iD, objectID, partyID string, accepter []string) {
 	wg := &sync.WaitGroup{}
 	wg.Add(len(accepter))
 	for _, fn := range accepter {
@@ -76,6 +78,11 @@ func (c *SAPAPICaller) AsyncGetTimeReport(iD string, accepter []string) {
 		case "TimeReportCollection":
 			func() {
 				c.TimeReportCollection(iD)
+				wg.Done()
+			}()
+		case "TimeReportPartyCollection":
+			func() {
+				c.TimeReportPartyCollection(objectID, partyID)
 				wg.Done()
 			}()
 		default:
@@ -94,7 +101,7 @@ func (c *SAPAPICaller) AsyncGetTimeReport(iD string, accepter []string) {
 
 ```
 {
-	"cursor": "/Users/latona5/bitbucket/sap-api-integrations-time-report-reads/SAP_API_Caller/caller.go#L53",
+	"cursor": "/Users/latona2/bitbucket/sap-api-integrations-time-report-reads/SAP_API_Caller/caller.go#L58",
 	"function": "sap-api-integrations-time-report-reads/SAP_API_Caller.(*SAPAPICaller).TimeReportCollection",
 	"level": "INFO",
 	"message": [
@@ -121,7 +128,6 @@ func (c *SAPAPICaller) AsyncGetTimeReport(iD string, accepter []string) {
 			"ETag": "2017-07-25T13:29:37+09:00"
 		}
 	],
-	"time": "2022-08-05T16:01:20+09:00"
+	"time": "2022-08-10T10:30:29+09:00"
 }
-
 ```

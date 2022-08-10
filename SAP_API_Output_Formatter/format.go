@@ -51,3 +51,37 @@ func ConvertToTimeReportCollection(raw []byte, l *logger.Logger) ([]TimeReportCo
 
 	return timeReportCollection, nil
 }
+
+func ConvertToTimeReportPartyCollection(raw []byte, l *logger.Logger) ([]TimeReportPartyCollection, error) {
+	pm := &responses.TimeReportPartyCollection{}
+
+	err := json.Unmarshal(raw, pm)
+	if err != nil {
+		return nil, xerrors.Errorf("cannot convert to TimeReportPartyCollection. unmarshal error: %w", err)
+	}
+	if len(pm.D.Results) == 0 {
+		return nil, xerrors.New("Result data is not exist")
+	}
+	if len(pm.D.Results) > 10 {
+		l.Info("raw data has too many Results. %d Results exist. show the first 10 of Results array", len(pm.D.Results))
+	}
+
+	timeReportPartyCollection := make([]TimeReportPartyCollection, 0, 10)
+	for i := 0; i < 10 && i < len(pm.D.Results); i++ {
+		data := pm.D.Results[i]
+		timeReportPartyCollection = append(timeReportPartyCollection, TimeReportPartyCollection{
+			ObjectID:                  data.ObjectID,
+			ParentObjectID:            data.ParentObjectID,
+			DeterminationMethodCode:   data.DeterminationMethodCode,
+			AddressHostTypeCode:       data.AddressHostTypeCode,
+			MainIndicator:             data.MainIndicator,
+			PartyID:                   data.PartyID,
+			PartyTypeCode:             data.PartyTypeCode,
+			RoleCategoryCode:          data.RoleCategoryCode,
+			RoleCode:                  data.RoleCode,
+			ETag:                      data.ETag,
+		})
+	}
+
+	return timeReportPartyCollection, nil
+}

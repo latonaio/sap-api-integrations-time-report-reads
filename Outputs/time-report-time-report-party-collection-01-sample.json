@@ -1,0 +1,20 @@
+{
+	"cursor": "/Users/latona2/bitbucket/sap-api-integrations-time-report-reads/SAP_API_Caller/caller.go#L89",
+	"function": "sap-api-integrations-time-report-reads/SAP_API_Caller.(*SAPAPICaller).TimeReportPartyCollection",
+	"level": "INFO",
+	"message": [
+		{
+			"ObjectID": "00163E6689841EE8A3E111D58258F917",
+			"ParentObjectID": "00163E6689841EE8A3E0E697A906F8AE",
+			"DeterminationMethodCode": "1",
+			"AddressHostTypeCode": "",
+			"MainIndicator": true,
+			"PartyID": "8000000212",
+			"PartyTypeCode": "167",
+			"RoleCategoryCode": "71",
+			"RoleCode": "71",
+			"ETag": "2018-07-24T15:03:14+09:00"
+		}
+	],
+	"time": "2022-08-10T10:47:32+09:00"
+}

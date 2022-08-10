@@ -1,5 +1,5 @@
 {
-	"cursor": "/Users/latona5/bitbucket/sap-api-integrations-time-report-reads/SAP_API_Caller/caller.go#L53",
+	"cursor": "/Users/latona2/bitbucket/sap-api-integrations-time-report-reads/SAP_API_Caller/caller.go#L58",
 	"function": "sap-api-integrations-time-report-reads/SAP_API_Caller.(*SAPAPICaller).TimeReportCollection",
 	"level": "INFO",
 	"message": [
@@ -26,5 +26,5 @@
 			"ETag": "2017-07-25T13:29:37+09:00"
 		}
 	],
-	"time": "2022-08-05T16:01:20+09:00"
+	"time": "2022-08-10T10:30:29+09:00"
 }

@@ -9,7 +9,7 @@
 	         "LanguageCode":"",
 	         "EmployeeUUID":"",
 	         "EndDate":"",
-	         "ID":"1",
+	         "ID":"",
 	         "InformationLifeCycleStatusCode":"",
 	         "RejectionReason":"",
 	         "LanguageCode1":"",
@@ -25,12 +25,12 @@
 	         "EntityLastChangedOn":"",
 	         "ETag":"",
 	            "TimeReportPartyCollection": {
-                "ObjectID":"",
+                "ObjectID":"00163E6689841EE8A3E111D58258F917",
                 "ParentObjectID":"",         
                 "DeterminationMethodCode":"",
                 "AddressHostTypeCode":"",
                 "MainIndicator":true,
-                "PartyID":"",
+                "PartyID":"8000000212",
                 "PartyTypeCode":"",
                 "RoleCategoryCode":"",
                 "RoleCode":"",
@@ -39,7 +39,7 @@
 		}
 	},
 	"api_schema": "TimeReport",
-	"accepter": ["TimeReportCollection"],
-	"time_report_code": "1",
+	"accepter": ["TimeReportPartyCollection"],
+	"time_report_code": "8000000212",
 	"deleted": false
 }

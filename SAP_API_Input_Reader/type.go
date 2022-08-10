@@ -78,6 +78,18 @@ type SDC struct {
 		TotalDuration                  string `json:"TotalDuration"`
 		EntityLastChangedOn            string `json:"EntityLastChangedOn"`
 		ETag                           string `json:"ETag"`
+		TimeReportPartyCollection      struct {
+			ObjectID                string `json:"ObjectID"`
+			ParentObjectID          string `json:"ParentObjectID"`
+			DeterminationMethodCode string `json:"DeterminationMethodCode"`
+			AddressHostTypeCode     string `json:"AddressHostTypeCode"`
+			MainIndicator           bool   `json:"MainIndicator"`
+			PartyID                 string `json:"PartyID"`
+			PartyTypeCode           string `json:"PartyTypeCode"`
+			RoleCategoryCode        string `json:"RoleCategoryCode"`
+			RoleCode                string `json:"RoleCode"`
+			ETag                    string `json:"ETag"`
+		} `json:"TimeReportPartyCollection"`
 	} `json:"TimeReportCollection"`
 	APISchema      string   `json:"api_schema"`
 	Accepter       []string `json:"accepter"`
